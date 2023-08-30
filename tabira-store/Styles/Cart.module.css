@@ -54,7 +54,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 30%;
   border: solid 2px #0b8770;
   background-color:rgb(233, 239, 201, 0.5);
   backdrop-filter: blur(10px);

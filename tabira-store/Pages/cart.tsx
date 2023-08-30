@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Navbar from "../Components/Navbar"
 import styles from "../Styles/Cart.module.css";
 import mockCart from '../public/mockCart.data ';
 
@@ -60,3 +59,4 @@ export default function Cart() {
         </div>
     )
 }
+
