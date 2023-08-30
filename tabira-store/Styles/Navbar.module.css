@@ -1,0 +1,43 @@
+/* Navbar.module.css */
+.nav {
+  margin: 0;
+}
+.ahome{
+  margin-left: 2rem;
+  text-decoration: none !important;
+  color: #ebe68d;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b8770;
+  padding-left: 1%;
+  padding-right: 1%;
+  width: 98%; /* Ocupa toda a largura da página */
+}
+
+.textohome{
+  font-family: 'Philosopher', sans-serif;
+}
+
+.textohome a {
+  color: white;
+  text-decoration: none;
+  
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: white;
+}

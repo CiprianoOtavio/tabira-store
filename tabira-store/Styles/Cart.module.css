@@ -1,0 +1,43 @@
+/* Importe as classes de CSS conforme necessário */
+.carrinho{
+  color: #0b8770;
+  font-family: 'Philosopher', sans-serif;
+}
+
+.cartItem {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.itemContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.productInfo {
+  flex: 1;
+}
+
+.cartContainer {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.totalContainer {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Resto do seu CSS existente */
