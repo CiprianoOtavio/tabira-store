@@ -1,18 +1,11 @@
+// Home.js (ou qualquer outro nome de arquivo que você está usando)
 import React from 'react';
-import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import useRouter from Next.js
 import Navbar from '../../Components/Navbar';
 import styles from "../../Styles/Page.module.css"; 
 import mockItems from '../../public/mock.data';
-
+import ProductLinkButton from '../../Components/ProductLinkButton';
 
 function Home() {
-  const router = useRouter(); // Initialize useRouter
-
-  const handleVerProdutoClick = (productId: number) => {
-    router.push(`/product/${productId}`); // Redirect to product details page
-  };
-
   return (
     <html>
       <body>
@@ -35,12 +28,8 @@ function Home() {
                   </div>
                   <div className={styles.info}>
                     <button className={styles.btn}>Adicionar ao carrinho</button>
-                    <button
-                      className={styles.btn2}
-                      onClick={() => handleVerProdutoClick(item.id)} // Call the handler on button click
-                    >
-                      Ver Produto
-                    </button>
+                    {/* Renderiza o novo componente passando o productId */}
+                    <ProductLinkButton productId={item.id} />
                   </div>
                 </div>
               </div>

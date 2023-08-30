@@ -3,10 +3,22 @@
   color: #0b8770;
   font-family: 'Philosopher', sans-serif;
 }
+.product {
+  max-width: 20%;
+  height: auto;
+  border: solid 2px #0b8770;  border-radius: 8px;
+}
+
+.productInfo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .cartItem {
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color:rgb(233, 239, 201, 0.5);
+  border: solid 2px #0b8770;  border-radius: 8px;
+  backdrop-filter: blur(10px);
   padding: 10px;
   margin: 10px 0;
   display: flex;
@@ -27,17 +39,78 @@
 }
 
 .cartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 100%;
   padding: 2rem;
   text-align: center;
 }
 
 .totalContainer {
   margin-top: 2rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 40%;
+  border: solid 2px #0b8770;
+  background-color:rgb(233, 239, 201, 0.5);
+  backdrop-filter: blur(10px);
+  
 }
 
-/* Resto do seu CSS existente */
+.btn{
+  font-family: 'Philosopher', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ebe68d;
+  background-color: #0b8770;
+  padding: 10px 30px;
+  border: solid #ebe68d 2px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 4px;
+  transition : 1000ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction:row-reverse;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  }
+  
+  .btn:hover{
+  
+  transition : 1000ms;
+  padding: 10px 31px;
+  transform : translateY(-0px);
+  background-color: #ebe68d;
+  color: #0b8770;
+  border: solid 2px #0b8770;
+  }
+
+  .btn2 {
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0b8770;
+    background-color: #ebe68d;
+    padding: 10px 30px;
+    border: solid #0b8770 2px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 4px;
+    transition: 1000ms;
+    transform: translateY(0);
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .btn2:hover {
+    transition: 1000ms;
+    padding: 10px 50px;
+    transform: translateY(-0px);
+    background-color: #0b8770;
+    color: #ebe68d;
+    border: solid 2px #ebe68d;
+  }

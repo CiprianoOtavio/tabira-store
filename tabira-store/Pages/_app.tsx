@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
+     
       {/* Componente de layout comum, como um cabeçalho ou menu de navegação */}
       <header>
         {/* Adicione qualquer conteúdo comum do cabeçalho aqui */}
