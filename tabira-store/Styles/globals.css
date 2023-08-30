@@ -45,3 +45,14 @@ a{
     border: solid 2px #0b8770;
   }
 }
+
+.itemList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* No máximo 5 cartões por linha */
+  gap: 20px; /* Espaçamento entre os cartões */
+}
+
+/* Estilos para cada item */
+.itemCard {
+  width: 100%; /* Largura de cada item */
+}

@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import Navbar from "../Components/Navbar"
-import styles from "../Styles/Cart.module.css"; 
+import styles from "../Styles/Cart.module.css";
+import mockCart from '../public/mockCart.data ';
+
 
 export default function Cart() {
-    const [cartItems, setCartItems] = useState([
-        { id: 1, name: 'Product 1', price: 10 },
-        { id: 2, name: 'Product 2', price: 15 },
-        // Adicione mais produtos conforme necessário
-    ]);
+    const [cartItems, setCartItems] = useState(mockCart);
 
     const removeFromCart = (itemId: number) => {
         const updatedCart = cartItems.filter(item => item.id !== itemId);
