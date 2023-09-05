@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 
+
 html{
   margin: 0;
   padding: 0;
@@ -55,12 +56,11 @@ a{
 .itemList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* No máximo 5 cartões por linha */
-  gap: 15px; /* Espaçamento entre os cartões */
+  gap: 15px; 
 }
 
-/* Estilos para cada item */
 .itemCard {
-  width: 90%; /* Largura de cada item */
+  width: 90%; 
 }
 
 .nos{
@@ -68,8 +68,8 @@ a{
   border: solid 2px #0b8770;
   margin: 15%;
   text-align: center;
-  border-radius: 5px;
-  padding: 15px;
+  border-radius: 8px;
+  
 }
 .titulo{
   font-family: 'Philosopher', sans-serif;

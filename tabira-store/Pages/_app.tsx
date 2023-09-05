@@ -1,14 +1,14 @@
 import { AppProps } from 'next/app';
-import '../styles/globals.css'; // Importe seu arquivo CSS global aqui
+import '../styles/globals.css'; 
 import Navbar from '../Components/Navbar';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // Você pode adicionar estados globais ou lógica aqui, se necessário.
-
+ 
   return (
     <>
      
-      {/* Componente de layout comum, como um cabeçalho ou menu de navegação */}
+      {}
+      
       <header>
         {/* Adicione qualquer conteúdo comum do cabeçalho aqui */}
         <Navbar />

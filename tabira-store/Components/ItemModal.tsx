@@ -3,7 +3,7 @@ import styles from '../Styles/ItemModal.module.css';
 
 interface ItemModalProps {
     onClose: () => void;
-    itemName: string; // Add this property
+    itemName: string; 
   }
 
   function ItemModal({ onClose, itemName }: ItemModalProps) {
