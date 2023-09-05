@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap');
 
-
 html{
   margin: 0;
   padding: 0;
@@ -19,6 +18,25 @@ body {
 a{
   text-decoration: none !important;
   color: #ebe68d;
+}
+
+.search{
+  width: 600px;
+  border: solid 2px #0b8770;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+  color: #0b8770;
+}
+
+.search::placeholder{
+  color: #0b8770;
+}
+
+.search:focus{
+  border: solid 2px #a6c288;
+  box-shadow: 0 0 0 0;
+  outline: 0;
 }
 
 .titulo{
