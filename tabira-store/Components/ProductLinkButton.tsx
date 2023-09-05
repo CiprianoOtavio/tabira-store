@@ -1,7 +1,7 @@
 // ProductLinkButton.js
 import React from 'react';
 import Link from 'next/link';
-import styles from "../Styles/Page.module.css"; 
+import styles from "../Styles/Home.module.css"; 
 
 interface ProductLinkButtonProps {
   productId: number; // Defina o tipo da prop productId

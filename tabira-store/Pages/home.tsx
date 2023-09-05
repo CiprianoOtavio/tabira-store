@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ItemModal from '../Components/ItemModal';
-import styles from '../Styles/Page.module.css';
+import styles from '../Styles/Home.module.css';
 import mockItems from '../public/mock.data';
 import ProductLinkButton from '../Components/ProductLinkButton';
 import SearchBar from '../Components/SearchBar';
@@ -34,10 +34,10 @@ function Home() {
       <div className="titulo">
         <h1 className={styles.tabira}>Tabira Store</h1>
       </div>
-      <div className="corpo">
-        <div className="searchBar">
+      <div className={styles.searchBar}>
           <SearchBar onSearch={handleSearch} />
         </div>
+      <div className="corpo">
         <div className="itemList">
           {filteredItems.map((item) => (
             <div key={item.id} className="itemCard">
