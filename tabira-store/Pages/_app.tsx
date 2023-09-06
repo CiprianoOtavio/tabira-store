@@ -7,14 +7,15 @@ function MyApp({ Component, pageProps }: AppProps) {
  
   return (
     <>
-      <CartProvider>
-      {}
+     
       
       <header>
         {/* Adicione qualquer conteúdo comum do cabeçalho aqui */}
         <Navbar />
       </header>
-
+     
+      <CartProvider>
+        {}
       {/* Renderiza o componente da página atual */}
       <Component {...pageProps} />
 

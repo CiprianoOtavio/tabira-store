@@ -11,8 +11,21 @@
     border: solid 2px rgb(11, 135, 112);
 
   }
+  .image{
+    width: 25rem;
+  }
   
   .modalContent {
+    background-color: #fff;
+    border: solid 2px #0b8770;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    text-align: center;
+  }
+  .modalContentItem {
+    display: flex;
     background-color: #fff;
     border: solid 2px #0b8770;
     padding: 20px;
@@ -35,3 +48,37 @@
     font-family: 'Philosopher', sans-serif;
     color: #0b8770;
   }
+
+.info{
+    display: flex;
+    align-items: center;
+  }
+
+  .btn{
+    font-family: 'Philosopher', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ebe68d;
+    background-color: #0b8770;
+    padding: 10px 30px;
+    border: solid #ebe68d 2px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 4px;
+    transition : 1000ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    }
+    
+    .btn:hover{
+    
+    transition : 1000ms;
+    padding: 10px 31px;
+    transform : translateY(-0px);
+    background-color: #ebe68d;
+    color: #0b8770;
+    border: solid 2px #0b8770;
+    }

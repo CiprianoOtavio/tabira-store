@@ -1,60 +1,63 @@
-import { createContext, ReactNode, useState } from "react";
-import { Product } from "../types/Product";
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { Product } from '../types/Product';
+import { CartManager } from '../types/CartManager';
 
-interface cartContextType {
+interface CartContextType {
   cart: Product[];
-  addItemToCart: (product: Product) => void;
-  removeItemFromCart: (itemIndex: number) => void;
+  addToCart: (item: Product) => void;
+  removeFromCart: (item: Product) => void;
+  totalPrice: () => string;
   clearCart: () => void;
-  totalPrice: () => number;
 }
 
-const cartContextDefaultValues: cartContextType = {
+export const CartContext = createContext<CartContextType>({
   cart: [],
-  addItemToCart: () => {},
-  removeItemFromCart: () => {},
+  addToCart: () => {},
+  removeFromCart: () => {},
+  totalPrice: () => '',
   clearCart: () => {},
-  totalPrice: () => 0,
-};
+});
 
-export const CartContext = createContext<cartContextType>(
-  cartContextDefaultValues
-);
+export const CartProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const isServer = typeof window === 'undefined'; // Verifica se o código está sendo executado no servidor
 
-interface Props {
-  children: ReactNode;
-}
-
-export const CartProvider = ({ children }: Props) => {
   const [cart, setCart] = useState<Product[]>([]);
 
-  const addItemToCart = (product: Product) => {
-    console.log(product)
-    setCart([...cart, product]);
-    console.log(cart);
+  useEffect(() => {
+    if (!isServer) {
+      // Inicialize o carrinho apenas no cliente
+      const cartManager = new CartManager();
+      setCart(cartManager.getCart());
+    }
+  }, []);
 
+  const addToCart = (item: Product) => {
+    const cartManager = new CartManager();
+    cartManager.addToCart(item);
+    setCart(cartManager.getCart());
   };
 
-  const removeItemFromCart = (itemIndex: number) => {
-    const newCart = cart.filter((_, index) => index !== itemIndex);
-    setCart(newCart);
+  const removeFromCart = (item: Product) => {
+    const cartManager = new CartManager();
+    cartManager.removeFromCart(item);
+    setCart(cartManager.getCart());
   };
 
-  function clearCart() {
+  const clearCart = () => {
+    const cartManager = new CartManager();
+    cartManager.clearCart();
     setCart([]);
-  }
+  };
 
-  function totalPrice(): number {
+  function totalPrice(): string {
     const totalPrice: number = cart
       .map((product) => product.price)
       .reduce((previousV, currentV) => previousV + currentV, 0);
-    return totalPrice;
+    return totalPrice.toFixed(2);
   }
 
   return (
-    <CartContext.Provider
-      value={{ cart, addItemToCart, removeItemFromCart, clearCart, totalPrice }}
-    >
+    <CartContext.Provider value={{ cart, addToCart, totalPrice, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );
