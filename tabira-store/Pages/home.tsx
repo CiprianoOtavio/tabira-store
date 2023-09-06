@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemModal from '../Components/ItemModal';
+import Navbar from '../Components/Navbar';
 import styles from '../Styles/Home.module.css';
 import mockItems from '../public/mock.data';
 import ProductLinkButton from '../Components/ProductLinkButton';
@@ -7,19 +7,6 @@ import SearchBar from '../Components/SearchBar';
 import Link from 'next/link';
 
 function Home() {
-
-  const [isItemModalOpen, setIsItemModalOpen] = useState(false);
-  const [addedItemName, setAddedItemName] = useState('');
-
-  const openItemModal = (itemName: string) => {
-    setIsItemModalOpen(true);
-    setAddedItemName(itemName); // Set the added item name
-  };
-
-  const closeItemModal = () => {
-    setIsItemModalOpen(false);
-  };
-
   const [filteredItems, setFilteredItems] = useState(mockItems);
 
   const handleSearch = (searchTerm: string) => {
@@ -34,10 +21,10 @@ function Home() {
       <div className="titulo">
         <h1 className={styles.tabira}>Tabira Store</h1>
       </div>
-      <div className={styles.searchBar}>
+      <div className="corpo">
+        <div className={styles.searchBar}>
           <SearchBar onSearch={handleSearch} />
         </div>
-      <div className="corpo">
         <div className="itemList">
           {filteredItems.map((item) => (
             <div key={item.id} className="itemCard">
@@ -57,16 +44,13 @@ function Home() {
                   <h1 className={styles.nomeItem}>R${item.price.toFixed(2)}</h1>
                 </div>
                 <div className={styles.info}>
-                <button className={styles.btn} onClick={() => openItemModal(item.name)}>
-                    Adicionar ao carrinho
-                  </button>
+                  <button className={styles.btn}>Adicionar ao carrinho</button>
                   <ProductLinkButton productId={item.id} />
                 </div>
               </div>
             </div>
           ))}
         </div>
-        {isItemModalOpen && (<ItemModal itemName={addedItemName} onClose={closeItemModal} />)}
       </div>
     </>
   );
