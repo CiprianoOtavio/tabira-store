@@ -1,12 +1,13 @@
 import { AppProps } from 'next/app';
 import '../styles/globals.css'; 
 import Navbar from '../Components/Navbar';
+import { CartProvider } from '../contexts/CartContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
  
   return (
     <>
-     
+      <CartProvider>
       {}
       
       <header>
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
 
       {/* Componente de layout comum, como um rodapé */}
+      </CartProvider>
       <footer>
         {/* Adicione qualquer conteúdo comum do rodapé aqui */}
       </footer>

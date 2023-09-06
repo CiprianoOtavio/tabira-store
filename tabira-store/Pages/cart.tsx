@@ -1,34 +1,21 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import styles from "../Styles/Cart.module.css";
-import mockCart from '../public/mockCart.data ';
+import { CartContext } from '../contexts/CartContext';
+import { CartProvider } from '../contexts/CartContext';
 
 
 export default function Cart() {
-    const [cartItems, setCartItems] = useState(mockCart);
-
-    const removeFromCart = (itemId: number) => {
-        const updatedCart = cartItems.filter(item => item.id !== itemId);
-        setCartItems(updatedCart);
-    };
-
-    const calculateTotal = () => {
-        const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-        return total.toFixed(2);
-    };
-
-    const clearCart = () => {
-        setCartItems([]);
-    };
-
+    const { cart, clearCart, totalPrice, removeItemFromCart } = useContext(CartContext);
+    console.log(cart)
     return (
-        <div>
+        <CartProvider>
         
             <div className="titulo">
                 <h1 className={styles.carrinho}>Carrinho</h1>
             </div>
             <div className={styles.cartContainer}>
                 <div>
-                {cartItems.map(item => (
+                {cart.map((item, index) => (
                     <div key={item.id} className={styles.cartItem}>
                         <div className={styles.itemContent}>
                             <div className={styles.productInfo}>
@@ -43,20 +30,21 @@ export default function Cart() {
                                 </div>
                             
                             </div>
-                            <button className={styles.btn} onClick={() => removeFromCart(item.id)}>Remover</button>
+                            <button className={styles.btn} onClick={() => removeItemFromCart(index)}>Remover</button>
                         </div>
                     </div>
                 ))}
                 </div>
                 
                 <div className={styles.totalContainer}>
-                    <h1 className={styles.carrinho}>Total: ${calculateTotal()}</h1>
+                    <h1 className={styles.carrinho}>Total: $ {totalPrice()}</h1>
                     <button className={styles.btn}  onClick={clearCart}>Limpar Carrinho</button>
                     <br />
                     <button className={styles.btn2} >Finalizar Compra</button>
                 </div>
             </div>
-        </div>
+        
+        </CartProvider>
     )
 }
 
